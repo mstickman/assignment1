@@ -5,17 +5,43 @@ public class Student {
     public double gpa = 0.0f;
     public int credits = 0;
 
-    public void SetStudent(String name_, int id_, String major_)
+    public void Student(String name_, int id_, String major_)
     {
         this.name = name_;
         this.id = id_;
         this.major = major_;
+        this.gpa = 0;
+        this.credits = 0;
     }
 
-    public void SetGrades(double GPA_, int credit_)
+    public void SetMajor(String major)
     {
-        this.gpa = GPA_;
-        this.credits = credit_;
+        this.major = major;
+    }
+
+    public String GetMajor()
+    {
+        return this.major;
+    }
+
+    public void SetId(int id)
+    {
+        this.id = id;
+    }
+
+    public int GetId()
+    {
+        return this.id;
+    }
+
+    public void SetName(String name)
+    {
+        this.name = name;
+    }
+
+    public String GetName()
+    {
+        return this.name;
     }
 
     public void AddCredits(int c)
