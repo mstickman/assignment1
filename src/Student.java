@@ -5,18 +5,15 @@ public class Student {
     public double gpa = 0.0f;
     public int credits = 0;
 
-    public void SetStudent(String name_, int id_, String major_)
+    public void Student(String name_, int id_, String major_)
     {
         this.name = name_;
         this.id = id_;
         this.major = major_;
+        this.gpa = 0.0;
+        this.credits = 0;
     }
 
-    public void SetGrades(double GPA_, int credit_)
-    {
-        this.gpa = GPA_;
-        this.credits = credit_;
-    }
 
     public void AddCredits(int c)
     {
