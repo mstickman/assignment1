@@ -1,55 +1,45 @@
-import java.util.Scanner;
+void main() {
 
-public class Main {
-    public static void main()
-    {
-        Course course = new Course();
+    Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+    IO.println("Enter course name: ");
+    String name = scanner.nextLine();
 
-        System.out.println("Enter course name: ");
-        String name = scanner.nextLine();
+    IO.println("Enter course instructor: ");
+    String instructor = scanner.nextLine();
 
-        System.out.println("Enter course instructor: ");
-        String instructor = scanner.nextLine();
+    IO.println("Enter count student: ");
+    int count = scanner.nextInt();
 
-        System.out.println("Enter count student: ");
-        int count = scanner.nextInt();
+    Course course = new Course(name, instructor, count);
 
-        course.Course(name, instructor, count);
+    for (int i = 0; i < count; i++) {
 
-        for (int i = 0; i < count; i++)
-        {
-            Scanner scanner_ = new Scanner(System.in);
-            Student student = new Student();
+        IO.println("Enter name student: ");
+        String student_name = scanner.next();
 
-            System.out.println("Enter name student: ");
-            String student_name = scanner.next();
+        IO.println("Enter id student: ");
+        int student_id = scanner.nextInt();
 
-            System.out.println("Enter id student: ");
-            int student_id = scanner.nextInt();
+        IO.println("Enter major student: ");
+        String student_major = scanner.next();
 
-            System.out.println("Enter major student: ");
-            String student_major = scanner.next();
+        IO.println("Enter gpa student: ");
+        double gpa = scanner.nextDouble();
 
-            System.out.println("Enter gpa student: ");
-            double gpa = scanner.nextDouble();
+        IO.println("Enter credit student: ");
+        int credit = scanner.nextInt();
 
-            System.out.println("Enter credit student: ");
-            int credit = scanner.nextInt();
+        Student student = new Student(student_name, student_id, student_major);
+        student.SetCredits(credit);
+        student.updateGpa(gpa);
 
-            student.Student(student_name, student_id, student_major);
-            student.SetCredits(credit);
-            student.updateGpa(gpa);
-
-            course.AddStudent(student, i);
-        }
-
-        Student std = course.HighestGpaStudent(course.students);
-        String stud = String.format("Student: %s, GPA: %.2f", std.name, std.gpa);
-
-        System.out.println(stud);
-
+        course.AddStudent(student, i);
     }
+
+    Student std = course.HighestGpaStudent(course.students);
+    String stud = String.format("Student: %s, GPA: %.2f", std.name, std.gpa);
+
+    IO.println(stud);
 
 }

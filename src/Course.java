@@ -3,7 +3,7 @@ public class Course {
     public String instructor;
     public Student[] students;
 
-    public void Course(String name_, String instructor_, int size)
+    public Course(String name_, String instructor_, int size)
     {
         this.courseName = name_;
         this.instructor = instructor_;
@@ -25,9 +25,8 @@ public class Course {
     {
         double sum = 0;
 
-        for (int i = 0; i < this.students.length; i++)
-        {
-            sum += students[i].gpa;
+        for (Student student : this.students) {
+            sum += student.gpa;
         }
 
         return sum / this.students.length;
@@ -52,9 +51,9 @@ public class Course {
 
     public void SummaryOfCource()
     {
-        for (int i = 0; i < this.students.length; i++) {
-            String std = String.format("Student %s, id: %d, major: %s, gpa: %f, credits: %d",  this.students[i].name,
-                    this.students[i].id,  this.students[i].major,  this.students[i].gpa,  this.students[i].credits);
+        for (Student student : this.students) {
+            String std = String.format("Student %s, id: %d, major: %s, gpa: %f, credits: %d", student.name,
+                    student.id, student.major, student.gpa, student.credits);
             System.out.println(std);
         }
     }
@@ -76,9 +75,8 @@ public class Course {
     public int countHonors(Student[] arr)
     {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].isHonors())
-            {
+        for (Student student : arr) {
+            if (student.isHonors()) {
                 count++;
             }
         }
@@ -88,8 +86,8 @@ public class Course {
     public int totalCredits(Student[] arr)
     {
         int total = 0;
-        for (int i = 0; i < arr.length; i++) {
-            total += arr[i].credits;
+        for (Student student : arr) {
+            total += student.credits;
         }
         return total;
     }

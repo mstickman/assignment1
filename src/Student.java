@@ -1,11 +1,11 @@
 public class Student {
-    public String name = "";
-    public int id = 0;
-    public String major = "";
-    public double gpa = 0.0f;
-    public int credits = 0;
+    public String name;
+    public int id;
+    public String major;
+    public double gpa ;
+    public int credits;
 
-    public void Student(String name_, int id_, String major_)
+    public Student(String name_, int id_, String major_)
     {
         this.name = name_;
         this.id = id_;
