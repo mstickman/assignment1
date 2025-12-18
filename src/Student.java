@@ -5,13 +5,13 @@ public class Student {
     public double gpa = 0.0f;
     public int credits = 0;
 
-    public void Student(String name_, int id_, String major_)
+    public void Student(String name_, int id_, String major_, double gpa, int credits)
     {
         this.name = name_;
         this.id = id_;
         this.major = major_;
-        this.gpa = 0.0;
-        this.credits = 0;
+        this.gpa = gpa;
+        this.credits = credits;
     }
 
 
