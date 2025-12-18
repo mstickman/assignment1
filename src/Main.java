@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Enter count student: ");
         int count = scanner.nextInt();
 
-        course.AcceptCourse(name, instructor, count);
+        course.Course(name, instructor, count);
 
         for (int i = 0; i < count; i++)
         {
@@ -38,8 +38,9 @@ public class Main {
             System.out.println("Enter credit student: ");
             int credit = scanner.nextInt();
 
-            student.SetStudent(student_name, student_id, student_major);
-            student.SetGrades(gpa, credit);
+            student.Student(student_name, student_id, student_major);
+            student.SetCredits(credit);
+            student.updateGpa(gpa);
 
             course.AddStudent(student, i);
         }

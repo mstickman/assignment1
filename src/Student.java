@@ -44,6 +44,16 @@ public class Student {
         return this.name;
     }
 
+    public void SetCredits(int c)
+    {
+        this.credits = c;
+    }
+
+    public int GetCredits()
+    {
+        return this.credits;
+    }
+
     public void AddCredits(int c)
     {
         this.credits += c;
@@ -52,6 +62,11 @@ public class Student {
     public  void updateGpa(double gpa)
     {
         this.gpa = gpa;
+    }
+
+    public double GetGpa()
+    {
+        return this.gpa;
     }
 
     public boolean isHonors()

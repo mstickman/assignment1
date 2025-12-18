@@ -3,7 +3,7 @@ public class Course {
     public String instructor;
     public Student[] students;
 
-    public void AcceptCourse(String name_, String instructor_, int size)
+    public void Course(String name_, String instructor_, int size)
     {
         this.courseName = name_;
         this.instructor = instructor_;
